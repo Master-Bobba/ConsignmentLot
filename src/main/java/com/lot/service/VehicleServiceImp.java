@@ -1,10 +1,15 @@
 package com.lot.service;
 
 import com.lot.model.Vehicle;
+import com.lot.repository.VehicleRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class VehicleServiceImp implements VehicleService{
 
     private VehicleRepository vehicleRepository;
