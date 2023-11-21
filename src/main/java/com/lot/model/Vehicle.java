@@ -5,10 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "Vehicle Type")
 @Entity
 public class Vehicle {
 
@@ -18,8 +21,8 @@ public class Vehicle {
 
     private String make;
 
-    @ManyToOne
-    private Owner owner;
+    @ManyToMany
+    private List<Owner> owners;
 
 
 }
