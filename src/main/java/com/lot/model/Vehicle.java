@@ -1,9 +1,6 @@
 package com.lot.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +8,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@MappedSuperclass   // Saying, i am not an entity, but my children are, thus threat them as database tables
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Entity
 public class Vehicle {
 
     @Id
@@ -22,5 +20,6 @@ public class Vehicle {
 
     @ManyToOne
     private Owner owner;
+
 
 }

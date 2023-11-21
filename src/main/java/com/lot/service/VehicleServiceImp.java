@@ -26,4 +26,9 @@ public class VehicleServiceImp implements VehicleService{
     public Vehicle save(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
+
+    @Override
+    public Vehicle findById(Long id) {
+        return vehicleRepository.findById(id).orElseGet(null);
+    }
 }
